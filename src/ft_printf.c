@@ -3,27 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 11:31:15 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 12:48:09 by dugonzal         ###   ########.fr       */
+/*   Updated: 2022/07/07 14:19:37 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
 
-int ft_printf(char const *format, ...)
+int	ft_printf(char const *format, ...)
 {
 }
 
 int	main(void)
 {
-	char const *format;
+	char const	*format;
 }
 
-
 /*
-* conversiones a implementar : cspdiuxX %.
-
-
+ conversiones a implementar : cspdiuxX %.
 */
