@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/08 17:00:13 by ciclo             #+#    #+#              #
-#    Updated: 2022/07/09 15:40:00 by ciclo            ###   ########.fr        #
+#    Updated: 2022/07/09 15:52:41 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ FLAGS = -Wall -Werror -Wextra
 
 RM = rm -rf
 
-#
+# rules of memory leaks
 val = valgrind
 
 SANI = -fsanitize=address -g3
@@ -42,6 +42,8 @@ sanitize:
 
 	$(CC) $(FLAGS) $(SANI) $(SRC)
 	@echo "sanitize memory likes done"
+valgrind:
+	$(val)	./libftprintf.a
 clean :
 	@$(RM) $(OBJ)
 	@echo "clean done"

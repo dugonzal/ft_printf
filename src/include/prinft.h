@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:10:57 by ciclo             #+#    #+#             */
-/*   Updated: 2022/07/09 15:19:02 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/07/09 15:54:50 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@
 # include <unistd.h>
 # include "../../libft/libft.h"
 
-//int	ft_printf(char const *format, ...);
+int	ft_printf(char const *format, ...);
 
 #endif
