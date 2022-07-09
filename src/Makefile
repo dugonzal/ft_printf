@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/08 17:00:13 by ciclo             #+#    #+#              #
-#    Updated: 2022/07/09 15:37:36 by ciclo            ###   ########.fr        #
+#    Updated: 2022/07/09 15:40:00 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ SANI = -fsanitize=address -g3
 
 CC = gcc
 
-all: $(NAME)
+# compilacion principal del make
+all: $(NAME) # regla de relink del make si ya esta creado el name no volvera a crearlo
 
 $(NAME):$(OBJ)
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME) && ./libftprintf.a
@@ -46,6 +47,6 @@ clean :
 	@echo "clean done"
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) *.out
 	@echo "fclean done"
 re:
