@@ -6,44 +6,46 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/08 17:00:13 by ciclo             #+#    #+#              #
-#    Updated: 2022/07/08 18:30:36 by ciclo            ###   ########.fr        #
+#    Updated: 2022/07/09 15:37:36 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#include libft/Makefile
+#include libft/Makefile # incluyendo el makefile de libft
 
-NAME = libftprinft.a
+# variables del make
+
+NAME = libftprintf.a
 
 SRC = ft_printf.c
 
-OBJ = $(SRC:.c=.o)
-
-CC = gcc
-
-AR = ar rc
+OBJ = $(SRC:.c=.o) # tiene que estar junta la declaracion porque sino elimina los .c en vez de los .o
 
 FLAGS = -Wall -Werror -Wextra
 
 RM = rm -rf
 
-VAL = valgrind
+#
+val = valgrind
 
-SANITIZE = -fsanitize=address -fsanitize=undefined -fsanitize=leak -fsanitize=memory
+SANI = -fsanitize=address -g3
+
+CC = gcc
 
 all: $(NAME)
 
- $(NAME): $(OBJS)
-	@$(AR) $(NAME) $(OBJS)
-	@echo "Compilation done"
+$(NAME):$(OBJ)
+	@$(CC) $(FLAGS) $(OBJ) -o $(NAME) && ./libftprintf.a
+	@echo "compilation done"
 
-clean:
+sanitize:
+
+	$(CC) $(FLAGS) $(SANI) $(SRC)
+	@echo "sanitize memory likes done"
+clean :
 	@$(RM) $(OBJ)
+	@echo "clean done"
 
 fclean: clean
 	@$(RM) $(NAME)
-
+	@echo "fclean done"
 re:
-
-val: $(VAL) ./a.out
-
-sani: $(CC) $(FLAGS) $(SANITIZE) $(SRC) -o a.out

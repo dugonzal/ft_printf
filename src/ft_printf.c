@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/09 11:31:15 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/07/08 16:53:21 by ciclo            ###   ########.fr       */
+/*   Created: 2022/07/09 15:13:20 by ciclo             #+#    #+#             */
+/*   Updated: 2022/07/09 15:37:20 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ int	ft_printf(char const *format, ...)
 */
 int	main(void)
 {
-	ft_printf("%s", "hello");
+	//write (1, "Hello World!\n", 13);
+	//write (1, "makefile es facil y muy guay de usar!\n", 41);
+	//printf ("main: Hello World!\n");
 	return (0);
 }
 
