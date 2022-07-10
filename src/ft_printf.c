@@ -6,35 +6,44 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:13:20 by ciclo             #+#    #+#             */
-/*   Updated: 2022/07/10 14:23:47 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/07/10 17:34:59 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_putchar_fd(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
 int	ft_printf(char const *format, ...)
 {
+	int		i;
 	va_list	arg; // declaramos la lista de flags
 	if (!format)
 		return (-1);
+	i = 0;
 	va_start(arg, format); // inicializamos la lista de flags
-	while (*format)
+	while (format[i] != 0)
 	{
-		if (*format == '%')
+		while (format[i] != '%' && format[i] != 0) // escribimos todo lo que encuentre antes del porcentaje
 		{
-			format++;
-			if (*format == '%')
-				ft_putchar_fd('%');
-			else if (*format == 'c')
+			write (1, &format[i], 1);
+			i++;
+		}
+		if (format[i] == '%')
+		{
+			i++;
+			if (format[i] == '%')
 			{
-				ft_putchar_fd(va_arg(arg, int));
+				ft_putchar('%');
 			}
-				*format++;
+			else if (format[i] == 'c')
+			{
+				ft_putchar(va_arg(arg, int));
+			}
+			i++;
 		}
 	}
 	va_end(arg); // liberamos la lista de flags
@@ -43,7 +52,8 @@ int	ft_printf(char const *format, ...)
 
 int	main(void)
 {
-	ft_printf("%c", 'c');
+	ft_printf("main:\n");
+	//printf("main:\n");
 	return (0);
 }
 
