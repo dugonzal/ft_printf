@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/08 17:00:13 by ciclo             #+#    #+#              #
-#    Updated: 2022/07/09 16:16:46 by ciclo            ###   ########.fr        #
+#    Updated: 2022/07/10 12:04:31 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,8 @@ val = valgrind
 
 SANI = -fsanitize=address -g3
 
+AR = ar rc
+
 CC = gcc
 # main makefile build
 all : $(NAME) # regla de relink del make si ya esta creado el name no volvera a crearlo
@@ -33,7 +35,7 @@ all : $(NAME) # regla de relink del make si ya esta creado el name no volvera a 
 $(NAME) : $(OBJ)
 
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME) && ./libftprintf.a
-	@echo "compilation done\n"
+	@echo "\n compilation done \n"
 
 sanitize :
 
@@ -43,16 +45,17 @@ sanitize :
 valgrind :
 
 	@$(val)	./libftprintf.a
+	@echo "\n valgind in use xd\n"
 
 clean :
 
 	@$(RM) $(OBJ)
-	@echo "clean done\n"
+	@echo "\n clean done \n"
 
 fclean : clean
 
 	@$(RM) $(NAME)
-	@echo "fclean done"
+	@echo "fclean done\n"
 
 re : fclean all
 
