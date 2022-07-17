@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:13:20 by ciclo             #+#    #+#             */
-/*   Updated: 2022/07/10 17:34:59 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/07/10 17:49:49 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,11 @@ int	ft_printf(char const *format, ...)
 		{
 			i++;
 			if (format[i] == '%')
-			{
 				ft_putchar('%');
-			}
 			else if (format[i] == 'c')
-			{
 				ft_putchar(va_arg(arg, int));
-			}
-			i++;
 		}
+		i++;
 	}
 	va_end(arg); // liberamos la lista de flags
 	return (0);
@@ -52,7 +48,7 @@ int	ft_printf(char const *format, ...)
 
 int	main(void)
 {
-	ft_printf("main:\n");
+	ft_printf("main:\n{%c}", 'h');
 	//printf("main:\n");
 	return (0);
 }
