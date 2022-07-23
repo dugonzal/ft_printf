@@ -6,16 +6,11 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:13:20 by ciclo             #+#    #+#             */
-/*   Updated: 2022/07/10 17:49:49 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/07/23 18:54:16 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#include "ft_printf.h"
 
 int	ft_printf(char const *format, ...)
 {
@@ -38,11 +33,16 @@ int	ft_printf(char const *format, ...)
 			if (format[i] == '%')
 				ft_putchar('%');
 			else if (format[i] == 'c')
-				ft_putchar(va_arg(arg, int));
+			{
+				ft_putstr_fd(va_arg(arg, char *), 1);
+			}
+			else
+			{
+				/* code */
+			}
 		}
 		i++;
 	}
-	va_end(arg); // liberamos la lista de flags
 	return (0);
 }
 
