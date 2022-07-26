@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/09 15:10:57 by ciclo             #+#    #+#             */
-/*   Updated: 2022/07/26 14:13:46 by ciclo            ###   ########.fr       */
+/*   Created: 2022/07/26 13:31:55 by ciclo             #+#    #+#             */
+/*   Updated: 2022/07/26 14:25:24 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINFT_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include "libft/libft.h"
-# include <stdarg.h>
-
-int		ft_printf(char const *format, ...);
-int		ft_formats(va_list, const char format);
-char	ft_putchar(char c);
-int	ft_str_printf(char *str);
-
-#endif
+int	main(void)
+{
+	ft_printf("main: {%a}", "hola");
+	printf("\nprintf: {%s}", "hola");
+	return (0);
+}
