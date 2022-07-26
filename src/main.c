@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 13:31:55 by ciclo             #+#    #+#             */
-/*   Updated: 2022/07/26 14:25:24 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/07/26 18:13:31 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(void)
 {
-	ft_printf("main: {%a}", "hola");
-	printf("\nprintf: {%s}", "hola");
+	ft_printf("ft_printf: {%d}", "hola");
+	printf("\nprintf: {%s}\n", "hola");
 	return (0);
 }

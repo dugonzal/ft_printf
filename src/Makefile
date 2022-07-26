@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/08 17:00:13 by ciclo             #+#    #+#              #
-#    Updated: 2022/07/26 14:09:08 by ciclo            ###   ########.fr        #
+#    Updated: 2022/07/26 14:52:29 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,8 @@ all:$(NAME) # regla de relink del make si ya esta creado el name no volvera a cr
 
 $(NAME) : $(OBJ)
 
-	@$(CC) $(FLAGS) $(OBJ) -o $(NAME) && ./$(NAME)
-	@echo "\n compilation done \n"
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME) && ./$(NAME)
+#@echo "\n compilation done \n"
 
 sanitize:
 
@@ -50,13 +50,13 @@ valgrind:
 clean:
 
 	@$(RM) $(OBJ)
-	@echo "\n clean done \n"
+#	@echo "\n clean done \n"
 
 fclean: clean
 
 	@$(RM) $(NAME)
-	@echo "fclean done\n"
+#	@echo "fclean done\n"
 
 re: fclean all
 
-	@echo "fclean and all done\n"
+#	@echo "fclean and all done\n"
