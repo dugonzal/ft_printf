@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:13:20 by ciclo             #+#    #+#             */
-/*   Updated: 2022/10/14 04:21:58 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/03/30 17:22:33 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,17 @@ int	ft_printf(char const *str, ...)
 	va_start(arg, str);
 	while (str[i] != 0)
 	{
-		if (str[i] == '%')
+		if (str[i] == '%' && str[i + 1] != 0)
 		{
 			length += ft_formats(arg, str[i + 1]);
 			i++;
 		}
 		else
+		{
+			if (str[i] == '%' && str[i + 1] == 0)
+				return (-1);
 			length += ft_putchar(str[i]);
+		}
 		i++;
 	}
 	va_end(arg);
