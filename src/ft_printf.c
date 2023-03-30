@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:13:20 by ciclo             #+#    #+#             */
-/*   Updated: 2023/03/30 17:22:33 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/03/30 17:30:53 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_printf(char const *str, ...)
 		}
 		else
 		{
-			if (str[i] == '%' && str[i + 1] == 0)
+			if (str[i] == '%' && !str[i + 1])
 				return (-1);
 			length += ft_putchar(str[i]);
 		}
