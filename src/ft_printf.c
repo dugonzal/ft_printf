@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:13:20 by ciclo             #+#    #+#             */
-/*   Updated: 2023/03/30 17:30:53 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/03/30 17:32:38 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int	ft_printf(char const *str, ...)
 	size_t		length;
 	va_list		arg;
 
-	if (!str)
-		return (-1);
 	i = 0;
 	length = 0;
 	va_start(arg, str);
